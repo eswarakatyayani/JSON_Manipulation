@@ -27,8 +27,8 @@ public class JsonManipulator {
                     List<Object> productResponse = new ArrayList<>();
 
                     // Extract serviceId and simulate fetching products
-                    Object serviceIdObj = itemMap.get("serviceId");
-                        for (String sid : (List<String>) serviceIdObj) {
+                    Object serviceIdObj = itemMap.get("serviceId");     
+                        for (String sid : (List<String>) serviceIdObj) {   // Note: Here i did explicit type casting, but we can use another way like above using mapper.converValue()
                             if (sid != null) {
                                 Map<String, Object> product = new HashMap<>();
                                 product.put("productId", "PI" + sid);
