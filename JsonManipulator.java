@@ -70,51 +70,41 @@ public class JsonManipulator {
                 "]";
 
         List<Object> result = processJson(sampleJson);
+        System.out.println("Result before making it JSON: "+result);  
         ObjectMapper mapper = new ObjectMapper();
         String outputJson = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(result);
         System.out.println(outputJson);
     }
 }
 /*
-
-Output will be as follows:
-[
-  {
-    "firstName" : "John",
-    "lastName" : "sean",
-    "serviceId" : [ "123", "456" ],
-    "collections" : {
-      "customer" : {
-        "id" : 1
-      },
-      "product" : [
-        {
-          "productId" : "PI123",
-          "isParent" : true
-        },
-        {
-          "productId" : "PI456",
-          "isParent" : true
-        }
-      ]
-    }
-  },
-  {
-    "firstName" : "Jane",
-    "lastName" : "Peter",
-    "serviceId" : [ "789" ],
-    "collections" : {
-      "product" : [
-        {
-          "productId" : "PI789",
-          "isParent" : true
-        }
-      ]
-    }
+Result before making it JSON: [{firstName=John, lastName=sean, serviceId=[123, 456], collections={customer={id=1}, product=[{isParent=true, productId=PI123}, {isParent=true, productId=PI456}]}}, {firstName=Jane, lastName=Peter, serviceId=[789], collections={product=[{isParent=true, productId=PI789}]}}]
+Output after converting to JSON: [ {
+  "firstName" : "John",
+  "lastName" : "sean",
+  "serviceId" : [ "123", "456" ],
+  "collections" : {
+    "customer" : {
+      "id" : 1
+    },
+    "product" : [ {
+      "isParent" : true,
+      "productId" : "PI123"
+    }, {
+      "isParent" : true,
+      "productId" : "PI456"
+    } ]
   }
-]
-
-
+}, {
+  "firstName" : "Jane",
+  "lastName" : "Peter",
+  "serviceId" : [ "789" ],
+  "collections" : {
+    "product" : [ {
+      "isParent" : true,
+      "productId" : "PI789"
+    } ]
+  }
+} ]
 
 */
 
