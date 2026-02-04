@@ -52,7 +52,7 @@ public class JsonManipulator {
     }
 
     public static void main(String[] args) throws Exception {
-        String sampleJson = "[\n" +
+        String sampleJson = "[\n" +                            // Remember this is Java String
                 "  {\n" +
                 "    \"firstName\": \"John\",\n" +
                 "    \"lastName\": \"sean\",\n" +
@@ -72,7 +72,7 @@ public class JsonManipulator {
         List<Object> result = processJson(sampleJson);
         System.out.println("Result before making it JSON: "+result);  
         ObjectMapper mapper = new ObjectMapper();
-        String outputJson = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(result);
+        String outputJson = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(result);   // Remeber this is JSON String
         System.out.println(outputJson);
     }
 }
