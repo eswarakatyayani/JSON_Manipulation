@@ -5,7 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class JsonTest {
     public static void main(String[] args) throws Exception {
 
-        // Step 1: Hardcoded JSON string
+    	// Java String (Basically it has JSON content String)
         String msg = "{"
                 + "\"orderNumber\":\"NC63033228278\","
                 + "\"orderVersion\":\"1\","
@@ -18,7 +18,7 @@ public class JsonTest {
                 + "\"notesType\":\"remarks\""
                 + "}";
 
-        // Step 2: Convert String → JsonNode
+        // Step 2: Convert Java String (JSON content String) → JsonNode
         ObjectMapper objectMapper = new ObjectMapper();
         JsonNode dataNode = objectMapper.readTree(msg);
 
@@ -56,3 +56,4 @@ notesType   : remarks
 notes JSON  : {"remarks":{"data":"Task Completed"}}
 
 */
+
