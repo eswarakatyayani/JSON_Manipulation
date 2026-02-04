@@ -4,7 +4,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class JsonNodeTypesDemo {
     public static void main(String[] args) throws Exception {
-
+    	
+    	// Java String (Basically it has JSON content String)
         String json = "{"
                 + "\"name\":\"Rohan\","
                 + "\"age\":25,"
@@ -103,11 +104,11 @@ Field is missing in JSON
 
 // JsonNode is best when JSON is dynamic.(Like Above) POJOs are best when JSON is stable.
 
-// writeValueAsString(): Java Object → JSON String
+// writeValueAsString(): Java Object → JSON String (CORRECT)
 
-// readTree():	JSON String → Json Node
+// readTree():	Java String → Json Node  (CORRECT)
 
-// readValue()	JSON String → Java Object
+// readValue()	Java String → Java Object (CORRECT)
 
 
 /*
@@ -215,8 +216,5 @@ MyPojo pojo = mapper.treeToValue(node.path("user"), MyPojo.class);
 
 ✔ Parse only part of JSON into object
 */
- 
- 
- 
  
  
