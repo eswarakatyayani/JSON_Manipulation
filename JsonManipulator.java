@@ -10,7 +10,7 @@ public class JsonManipulator {
         ObjectMapper mapper = new ObjectMapper();
 
         try {
-            //Here we are parsing JSON into a List of Objects
+            //Here we are parsing Java String (JSON Content) into a List of Objects
             List<Object> listingsResponse = mapper.readValue(jsonInput, new TypeReference<List<Object>>() {});
 
             for (Object item : listingsResponse) {
@@ -52,7 +52,7 @@ public class JsonManipulator {
     }
 
     public static void main(String[] args) throws Exception {
-        String sampleJson = "[\n" +                            // Remember this is Java String
+        String sampleJson = "[\n" +                            // Remember this is Java String with JSON Content
                 "  {\n" +
                 "    \"firstName\": \"John\",\n" +
                 "    \"lastName\": \"sean\",\n" +
